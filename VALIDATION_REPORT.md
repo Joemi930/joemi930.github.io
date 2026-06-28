@@ -1,6 +1,6 @@
 # Validation Report
 
-Date : 2026-06-28
+Date : 2026-06-29
 
 ## Environnement
 
@@ -23,6 +23,9 @@ Date : 2026-06-28
 - Preview final : `npm run preview -- --port 4182`.
 - `gh repo create Joemi930/joemi930.github.io --private --source . --remote origin --push` : dépôt privé créé et code poussé.
 - `gh api --method POST repos/Joemi930/joemi930.github.io/pages -f build_type=workflow` : refus GitHub Pages sur dépôt privé avec le plan actuel.
+- `gh repo edit Joemi930/joemi930.github.io --visibility public --accept-visibility-change-consequences` : dépôt rendu public.
+- `gh workflow run deploy.yml -R Joemi930/joemi930.github.io` : déploiement déclenché.
+- `gh run watch 28339855796 -R Joemi930/joemi930.github.io --exit-status` : workflow réussi.
 
 ## Résultat npm install
 
@@ -44,17 +47,32 @@ Réussi sur `http://127.0.0.1:4182/`.
 
 ## Résultat GitHub
 
-- Dépôt créé : `https://github.com/Joemi930/joemi930.github.io`
-- Visibilité : privé.
-- Dernier commit poussé : `dedade8`.
-- GitHub Actions : le build passe jusqu'à `pnpm install` et `pnpm run build`.
-- Déploiement Pages : bloqué par GitHub car le plan actuel ne supporte pas Pages pour ce dépôt privé.
+- Dépôt public : `https://github.com/Joemi930/joemi930.github.io`
+- URL finale : `https://joemi930.github.io/`
+- Visibilité : public.
+- GitHub Pages : activé.
+- Build type Pages : `workflow`.
+- HTTPS enforced : oui.
+- Workflow : `Deploy GitHub Pages`.
+- Run publié : `28339855796`.
+- Statut du workflow : success.
+- Publication locale vérifiée le : `2026-06-29 00:38:20 +01:00`.
+- Commit déployé au moment de la publication : `62574413ce2922b5b2678b36f4baf3e5960e9de1`.
 
-Options :
+## Résultat production
 
-1. rendre le dépôt public ;
-2. garder le dépôt privé mais déployer ailleurs, par exemple Cloudflare Pages, Vercel ou Netlify ;
-3. passer à un plan GitHub compatible.
+Testé sur `https://joemi930.github.io/` :
+
+- Accueil : OK.
+- Projets : OK.
+- Gold Sniper : OK.
+- ClipWave : OK.
+- À propos : OK.
+- Contact : OK.
+- Menu mobile : OK.
+- Responsive desktop : OK.
+- Responsive mobile `390x844` : OK.
+- Console navigateur : aucune erreur.
 
 ## Résultat responsive
 
@@ -69,12 +87,12 @@ Captures générées dans `validation-screenshots/`.
 
 ## Résultat liens
 
-Réussi par test Playwright :
+Réussi par test Playwright local et production :
 
 - email `mailto:joemitete12@gmail.com`
-- GitHub
-- LinkedIn
-- WhatsApp
+- GitHub `https://github.com/Joemi930`
+- LinkedIn `https://cd.linkedin.com/in/joemi-tete-0a7221416`
+- WhatsApp `https://wa.me/243844497360`
 
 ## Résultat sécurité
 
@@ -82,6 +100,11 @@ Réussi par test Playwright :
 - Recherche de motifs sensibles exécutée en excluant `node_modules`, `dist`, `.git` et `.env`.
 - Les seules occurrences trouvées sont des mentions documentaires de sécurité, pas des valeurs de secret.
 - `npm audit --audit-level=moderate --strict-ssl=false` n'a pas pu être utilisé car npm exige un `package-lock.json`, et la génération du lockfile npm s'est bloquée dans cet environnement.
+- Aucun fichier `.env` présent dans les fichiers suivis.
+- Aucun token, clé API, mot de passe, compte MT5, URL privée ou donnée sensible committé.
+- Aucune adresse complète de Joemi trouvée.
+- Localisation publique affichée uniquement sous `Kinshasa, RDC`.
+- CV affiché comme `CV bientôt disponible`.
 
 ## Bugs trouvés
 
@@ -107,4 +130,3 @@ Réussi par test Playwright :
 
 - CV non disponible.
 - Captures Gold Sniper et ClipWave non ajoutées, car les projets sources n'ont pas été lancés en rendu complet pendant cette passe.
-- Déploiement GitHub Pages non publié, car GitHub Pages sur dépôt privé n'est pas disponible avec le plan actuel.
