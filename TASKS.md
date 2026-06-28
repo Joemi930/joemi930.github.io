@@ -19,7 +19,7 @@
 
 ## Restant
 
-- Publier le dépôt distant `Joemi930/joemi930.github.io` si l'accès GitHub est disponible.
+- Choisir l'option de déploiement : rendre le dépôt public, utiliser un autre hébergeur, ou passer à un plan GitHub compatible avec Pages privé.
 - Ajouter le CV officiel quand il sera prêt.
 - Ajouter des captures réelles des projets sources si leur exécution locale est validée sans données sensibles.
 

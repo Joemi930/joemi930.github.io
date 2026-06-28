@@ -21,6 +21,8 @@ Date : 2026-06-28
 - `npm run test:e2e` : 8 tests réussis.
 - `pnpm exec playwright install chromium` avec `NODE_OPTIONS=--use-system-ca` : navigateur installé.
 - Preview final : `npm run preview -- --port 4182`.
+- `gh repo create Joemi930/joemi930.github.io --private --source . --remote origin --push` : dépôt privé créé et code poussé.
+- `gh api --method POST repos/Joemi930/joemi930.github.io/pages -f build_type=workflow` : refus GitHub Pages sur dépôt privé avec le plan actuel.
 
 ## Résultat npm install
 
@@ -39,6 +41,20 @@ Réussi. Le dossier `dist/` est généré.
 ## Résultat preview
 
 Réussi sur `http://127.0.0.1:4182/`.
+
+## Résultat GitHub
+
+- Dépôt créé : `https://github.com/Joemi930/joemi930.github.io`
+- Visibilité : privé.
+- Dernier commit poussé : `dedade8`.
+- GitHub Actions : le build passe jusqu'à `pnpm install` et `pnpm run build`.
+- Déploiement Pages : bloqué par GitHub car le plan actuel ne supporte pas Pages pour ce dépôt privé.
+
+Options :
+
+1. rendre le dépôt public ;
+2. garder le dépôt privé mais déployer ailleurs, par exemple Cloudflare Pages, Vercel ou Netlify ;
+3. passer à un plan GitHub compatible.
 
 ## Résultat responsive
 
@@ -91,4 +107,4 @@ Réussi par test Playwright :
 
 - CV non disponible.
 - Captures Gold Sniper et ClipWave non ajoutées, car les projets sources n'ont pas été lancés en rendu complet pendant cette passe.
-- Dépôt GitHub distant non créé/poussé depuis cette passe.
+- Déploiement GitHub Pages non publié, car GitHub Pages sur dépôt privé n'est pas disponible avec le plan actuel.
