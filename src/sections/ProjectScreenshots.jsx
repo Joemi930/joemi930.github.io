@@ -1,11 +1,12 @@
 import SectionTitle from "../components/SectionTitle.jsx";
+import { siteContent } from "../data/siteContent.js";
 
 export default function ProjectScreenshots({ project }) {
   const hasScreenshots = project.screenshots.length > 0;
 
   return (
     <section className="project-section">
-      <SectionTitle kicker="Captures" title="Aperçu interface" />
+      <SectionTitle kicker={siteContent.projectDetail.screenshots.kicker} title={siteContent.projectDetail.screenshots.title} />
       {hasScreenshots ? (
         <div className="screenshots-grid">
           {project.screenshots.map((screenshot) => (
@@ -22,11 +23,8 @@ export default function ProjectScreenshots({ project }) {
             <span />
             <span />
           </div>
-          <h3>Capture bientôt disponible</h3>
-          <p>
-            Aucune capture exploitable n'a été ajoutée au portfolio : le rendu local complet du projet source n'a pas été
-            lancé pendant cette passe.
-          </p>
+          <h3>{siteContent.projectDetail.screenshots.emptyTitle}</h3>
+          <p>{siteContent.projectDetail.screenshots.emptyDescription}</p>
         </div>
       )}
     </section>

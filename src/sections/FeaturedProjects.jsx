@@ -2,6 +2,7 @@ import Container from "../components/Container.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import { projects } from "../data/projects.js";
+import { siteContent } from "../data/siteContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
 
 export default function FeaturedProjects() {
@@ -11,9 +12,9 @@ export default function FeaturedProjects() {
     <section className={`section reveal ${visible}`} ref={ref}>
       <Container>
         <SectionTitle
-          kicker="Projets sélectionnés"
-          title="Deux projets concrets, présentés avec contexte."
-          description="Chaque page détail explique le problème, la solution, l'architecture et l'état réel du code."
+          kicker={siteContent.homeProjects.kicker}
+          title={siteContent.homeProjects.title}
+          description={siteContent.homeProjects.description}
         />
         <div className="project-grid">
           {projects.map((project) => (

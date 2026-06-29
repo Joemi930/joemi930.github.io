@@ -3,6 +3,7 @@ import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import { profile } from "../data/profile.js";
+import { siteContent } from "../data/siteContent.js";
 import { socials } from "../data/socials.js";
 
 export default function Contact() {
@@ -10,27 +11,27 @@ export default function Contact() {
     <section className="page page--contact">
       <Container>
         <SectionTitle
-          kicker="Contact"
-          title="Travaillons ensemble"
-          description="Une opportunité, un stage, une collaboration ou un échange technique ? Les liens essentiels sont ici."
+          kicker={siteContent.contactPage.kicker}
+          title={siteContent.contactPage.title}
+          description={siteContent.contactPage.description}
         />
         <div className="contact-grid">
           <article className="contact-card">
-            <h1>Contact direct</h1>
+            <h1>{siteContent.contactPage.directTitle}</h1>
             <p>{profile.title}</p>
             <p>{profile.location}</p>
             <div className="contact-actions">
               <Button href={`mailto:${socials.email}`} icon={Mail} iconPosition="left">
-                M'écrire par email
+                {siteContent.contactPage.actions.email}
               </Button>
               <Button href={socials.github} variant="secondary" icon={Github} iconPosition="left">
-                Voir GitHub
+                {siteContent.contactPage.actions.github}
               </Button>
               <Button href={socials.linkedin} variant="secondary" icon={Linkedin} iconPosition="left">
-                Voir LinkedIn
+                {siteContent.contactPage.actions.linkedin}
               </Button>
               <Button href={socials.whatsappUrl} variant="secondary" icon={MessageCircle} iconPosition="left">
-                Écrire sur WhatsApp
+                {siteContent.contactPage.actions.whatsapp}
               </Button>
               <Button disabled variant="ghost">
                 {profile.cv.label}
@@ -38,26 +39,26 @@ export default function Contact() {
             </div>
           </article>
           <aside className="panel contact-info">
-            <h2>Informations</h2>
+            <h2>{siteContent.contactPage.infoTitle}</h2>
             <dl>
               <div>
-                <dt>Email</dt>
+                <dt>{siteContent.contactPage.labels.email}</dt>
                 <dd>{socials.email}</dd>
               </div>
               <div>
-                <dt>GitHub</dt>
-                <dd>Joemi930</dd>
+                <dt>{siteContent.contactPage.labels.github}</dt>
+                <dd>{socials.githubHandle}</dd>
               </div>
               <div>
-                <dt>LinkedIn</dt>
-                <dd>joemi-tete</dd>
+                <dt>{siteContent.contactPage.labels.linkedin}</dt>
+                <dd>{socials.linkedinHandle}</dd>
               </div>
               <div>
-                <dt>WhatsApp</dt>
+                <dt>{siteContent.contactPage.labels.whatsapp}</dt>
                 <dd>{socials.whatsapp}</dd>
               </div>
               <div>
-                <dt>CV</dt>
+                <dt>{siteContent.contactPage.labels.cv}</dt>
                 <dd>{profile.cv.label}</dd>
               </div>
             </dl>

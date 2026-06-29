@@ -17,10 +17,10 @@ export const skillGroups = [
   },
   {
     title: "Outils",
-    skills: ["Git", "GitHub", "VS Code", "MetaTrader 5", "Playwright"]
+    skills: ["Git", "GitHub", "VS Code", "Claude Code", "Codex"]
   },
   {
     title: "Méthodes",
-    skills: ["UML", "Architecture logicielle", "MVC", "Tests", "Documentation"]
+    skills: ["UML", "Architecture logicielle", "Tests", "Documentation"]
   }
 ];

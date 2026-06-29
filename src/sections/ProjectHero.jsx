@@ -2,6 +2,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import Button from "../components/Button.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
 import TechBadge from "../components/TechBadge.jsx";
+import { siteContent } from "../data/siteContent.js";
 
 export default function ProjectHero({ project }) {
   return (
@@ -9,7 +10,7 @@ export default function ProjectHero({ project }) {
       <div className="project-hero__copy">
         <nav className="breadcrumb" aria-label="Fil d'Ariane">
           <Button to="/projects" variant="ghost" icon={ArrowLeft} iconPosition="left">
-            Retour aux projets
+            {siteContent.projectDetail.back}
           </Button>
         </nav>
         <StatusBadge>{project.status}</StatusBadge>
@@ -23,42 +24,42 @@ export default function ProjectHero({ project }) {
         <div className="project-hero__actions">
           {project.repository.isPublic ? (
             <Button href={project.repository.url} icon={ExternalLink}>
-              Voir le code
+              {siteContent.projectDetail.repositoryPublic}
             </Button>
           ) : (
             <Button disabled variant="secondary">
-              Code privé
+              {siteContent.projectDetail.repositoryUnavailable}
             </Button>
           )}
           {project.demo.available ? (
             <Button href={project.demo.url} variant="secondary" icon={ExternalLink}>
-              Voir la démo
+              {siteContent.projectDetail.demoAvailable}
             </Button>
           ) : (
             <Button disabled variant="ghost">
-              Démo non disponible
+              {siteContent.projectDetail.demoUnavailable}
             </Button>
           )}
         </div>
       </div>
-      <aside className="project-info-panel" aria-label={`Informations sur ${project.title}`}>
-        <h2>Informations</h2>
+      <aside className="project-info-panel" aria-label={`${siteContent.projectDetail.infoTitle} sur ${project.title}`}>
+        <h2>{siteContent.projectDetail.infoTitle}</h2>
         <dl>
           <div>
-            <dt>Catégorie</dt>
+            <dt>{siteContent.projectDetail.labels.category}</dt>
             <dd>{project.category}</dd>
           </div>
           <div>
-            <dt>Statut</dt>
+            <dt>{siteContent.projectDetail.labels.status}</dt>
             <dd>{project.status}</dd>
           </div>
           <div>
-            <dt>Démonstration</dt>
-            <dd>{project.demo.available ? "Disponible" : "Non disponible"}</dd>
+            <dt>{siteContent.projectDetail.labels.demo}</dt>
+            <dd>{project.demo.available ? siteContent.projectDetail.labels.available : siteContent.projectDetail.labels.unavailable}</dd>
           </div>
           <div>
-            <dt>Dépôt</dt>
-            <dd>{project.repository.isPublic ? "Public" : "Privé"}</dd>
+            <dt>{siteContent.projectDetail.labels.repository}</dt>
+            <dd>{project.repository.isPublic ? siteContent.projectDetail.labels.public : siteContent.projectDetail.labels.private}</dd>
           </div>
         </dl>
       </aside>

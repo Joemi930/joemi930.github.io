@@ -1,6 +1,7 @@
 import Container from "../components/Container.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import { experience } from "../data/experience.js";
+import { siteContent } from "../data/siteContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
 
 export default function Experience() {
@@ -10,9 +11,9 @@ export default function Experience() {
     <section className={`section reveal ${visible}`} ref={ref}>
       <Container>
         <SectionTitle
-          kicker="Parcours"
-          title="Une progression construite par projets."
-          description="L'objectif est de consolider la théorie du génie logiciel par des livrables concrets et vérifiables."
+          kicker={siteContent.experience.kicker}
+          title={siteContent.experience.title}
+          description={siteContent.experience.description}
         />
         <div className="timeline">
           {experience.map((item) => (

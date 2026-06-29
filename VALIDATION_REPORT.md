@@ -12,6 +12,8 @@ Date : 2026-06-29
 
 ## Commandes exécutées
 
+### Publication initiale
+
 - `npm install` : bloqué localement à cause d'un problème de certificat Node/registry.
 - `pnpm install --config.strict-ssl=false` : dépendances installées.
 - `pnpm approve-builds esbuild` : script postinstall esbuild approuvé.
@@ -26,6 +28,23 @@ Date : 2026-06-29
 - `gh repo edit Joemi930/joemi930.github.io --visibility public --accept-visibility-change-consequences` : dépôt rendu public.
 - `gh workflow run deploy.yml -R Joemi930/joemi930.github.io` : déploiement déclenché.
 - `gh run watch 28339855796 -R Joemi930/joemi930.github.io --exit-status` : workflow réussi.
+
+### Corrections éditoriales 2026-06-29
+
+- Centralisation renforcée des textes publics dans `src/data/navigation.js`, `src/data/siteContent.js`, `src/data/profile.js`, `src/data/projects.js` et `src/data/skills.js`.
+- Remplacement des formulations trop techniques par des textes plus naturels et plus fidèles au positionnement de Joemi.
+- Remplacement de l'ancien logo court par `JOEMI TETE`.
+- Mise à jour des libellés publics : `Problématique`, `Structure technique`, `Ce que le projet apporte`, `Dépôt non public`.
+- Remplacement du message public de capture par : `Projet en développement : les captures seront ajoutées dès que le rendu sera stabilisé.`
+- Mise à jour des compétences affichées : Claude Code et Codex ajoutés, anciens éléments non souhaités retirés.
+- Gold Sniper : lien GitHub public vérifié et ajouté, `https://github.com/Joemi930/gold-sniper`.
+- ClipWave : remote GitHub vérifiée, `https://github.com/Joemi930/clipwave`, mais dépôt GitHub observé comme privé ; le portfolio ne le présente donc pas comme public.
+- Note technique `ADMIN_PANEL_PLAN.md` ajoutée pour la V2 du panneau administrateur.
+- `npm run lint` : réussite après corrections éditoriales.
+- `npm run build` : réussite après corrections éditoriales.
+- `npm run test:e2e` : 8 tests réussis après corrections éditoriales.
+- `npm run preview -- --port 4183` : preview local lancé et vérifié.
+- Vérification locale e2e manuelle : Accueil, Projets, Gold Sniper, ClipWave, À propos, Contact, menu mobile, liens sociaux, responsive desktop et mobile, console sans erreur.
 
 ## Résultat npm install
 
@@ -44,6 +63,7 @@ Réussi. Le dossier `dist/` est généré.
 ## Résultat preview
 
 Réussi sur `http://127.0.0.1:4182/`.
+Réussi sur `http://127.0.0.1:4183/` après corrections éditoriales.
 
 ## Résultat GitHub
 
@@ -57,7 +77,8 @@ Réussi sur `http://127.0.0.1:4182/`.
 - Run publié : `28339855796`.
 - Statut du workflow : success.
 - Publication locale vérifiée le : `2026-06-29 00:38:20 +01:00`.
-- Commit déployé au moment de la publication : `62574413ce2922b5b2678b36f4baf3e5960e9de1`.
+- Dernier commit initial publié avant corrections éditoriales : `139e6f70ef8ad18f6d07c0efecf8e47ca8c9d7cd`.
+- Le commit final des corrections éditoriales et le nouveau run GitHub Actions sont confirmés dans le retour de mission après push et déploiement.
 
 ## Résultat production
 
@@ -76,7 +97,7 @@ Testé sur `https://joemi930.github.io/` :
 
 ## Résultat responsive
 
-Vérifié avec captures Playwright :
+Vérifié avec captures e2e :
 
 - `390x844`
 - `768x1024`
@@ -84,10 +105,11 @@ Vérifié avec captures Playwright :
 - `1440x900`
 
 Captures générées dans `validation-screenshots/`.
+Nouvelle vérification locale après corrections : `390x844` et `1366x768`, sans débordement horizontal.
 
 ## Résultat liens
 
-Réussi par test Playwright local et production :
+Réussi par test e2e local et production :
 
 - email `mailto:joemitete12@gmail.com`
 - GitHub `https://github.com/Joemi930`
@@ -101,10 +123,16 @@ Réussi par test Playwright local et production :
 - Les seules occurrences trouvées sont des mentions documentaires de sécurité, pas des valeurs de secret.
 - `npm audit --audit-level=moderate --strict-ssl=false` n'a pas pu être utilisé car npm exige un `package-lock.json`, et la génération du lockfile npm s'est bloquée dans cet environnement.
 - Aucun fichier `.env` présent dans les fichiers suivis.
-- Aucun token, clé API, mot de passe, compte MT5, URL privée ou donnée sensible committé.
+- Aucun token, clé API, mot de passe, compte broker, URL privée ou donnée sensible committé.
 - Aucune adresse complète de Joemi trouvée.
 - Localisation publique affichée uniquement sous `Kinshasa, RDC`.
 - CV affiché comme `CV bientôt disponible`.
+
+## Résultat scan éditorial
+
+Les anciennes formulations ciblées par Joemi ne sont plus présentes dans `src`. Le scan couvre les anciens libellés de structure, d'analyse, de capture, de titre projets, de marque, de compétences et de construction IA.
+
+Le scan `.env` rapide ne retourne aucun fichier `.env` ou `.env.*` hors dossiers exclus. Le scan de motifs sensibles ne retourne aucune valeur de secret ; seules des mentions techniques non sensibles du workflow GitHub Actions et du hook de scroll ont été trouvées.
 
 ## Bugs trouvés
 
@@ -129,4 +157,5 @@ Réussi par test Playwright local et production :
 ## Limites restantes
 
 - CV non disponible.
-- Captures Gold Sniper et ClipWave non ajoutées, car les projets sources n'ont pas été lancés en rendu complet pendant cette passe.
+- Captures Gold Sniper et ClipWave non ajoutées : les projets sont encore en développement et les captures seront ajoutées quand leurs interfaces seront stabilisées.
+- Le dépôt ClipWave existe sur GitHub, mais sa visibilité observée est privée ; il n'est pas affiché comme dépôt public dans le portfolio.

@@ -6,7 +6,7 @@ test("home page loads without console errors", async ({ page }) => {
     if (message.type() === "error") errors.push(message.text());
   });
   await page.goto("/#/");
-  await expect(page.getByRole("heading", { name: /Je conçois des applications web/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Je développe des applications web/ })).toBeVisible();
   await expect(page.getByAltText("Portrait de TETE NGITUKA JOEMI")).toBeVisible();
   expect(errors).toEqual([]);
 });
@@ -16,8 +16,10 @@ test("project routes load", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Mes projets" })).toBeVisible();
   await page.goto("/#/projects/gold-sniper");
   await expect(page.getByRole("heading", { name: "Gold Sniper" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Voir le code" })).toHaveAttribute("href", "https://github.com/Joemi930/gold-sniper");
   await page.goto("/#/projects/clipwave");
   await expect(page.getByRole("heading", { name: "ClipWave" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Dépôt non public" })).toBeDisabled();
 });
 
 test("contact links exist", async ({ page }) => {

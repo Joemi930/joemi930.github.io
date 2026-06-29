@@ -2,13 +2,14 @@ import { ArrowUpRight, Code2 } from "lucide-react";
 import Button from "./Button.jsx";
 import StatusBadge from "./StatusBadge.jsx";
 import TechBadge from "./TechBadge.jsx";
+import { siteContent } from "../data/siteContent.js";
 
 export default function ProjectCard({ project, featured = false }) {
   return (
     <article className={featured ? "project-card project-card--featured" : "project-card"}>
       <div className="project-card__visual" aria-hidden="true">
         <Code2 size={42} />
-        <span>Case study</span>
+        <span>{siteContent.projectCard.caseStudy}</span>
       </div>
       <div className="project-card__body">
         <div className="project-card__meta">
@@ -23,7 +24,7 @@ export default function ProjectCard({ project, featured = false }) {
           ))}
         </div>
         <Button to={`/projects/${project.slug}`} variant="secondary" icon={ArrowUpRight}>
-          Voir le projet
+          {siteContent.projectCard.action}
         </Button>
       </div>
     </article>

@@ -3,13 +3,7 @@ import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button.jsx";
 import MobileMenu from "./MobileMenu.jsx";
-
-const navItems = [
-  { label: "Accueil", to: "/" },
-  { label: "Projets", to: "/projects" },
-  { label: "À propos", to: "/about" },
-  { label: "Contact", to: "/contact" }
-];
+import { brand, navigation, navigationCta } from "../data/navigation.js";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,19 +13,19 @@ export default function Navbar() {
     <>
       <header className="site-header">
         <div className="nav-shell">
-          <NavLink to="/" className="brand" aria-label="Retour à l'accueil">
+          <NavLink to="/" className="brand" aria-label={brand.ariaLabel}>
             <span aria-hidden="true" />
-            JOEMI.T
+            {brand.label}
           </NavLink>
           <nav className="desktop-nav" aria-label="Navigation principale">
-            {navItems.map((item) => (
+            {navigation.map((item) => (
               <NavLink key={item.to} to={item.to}>
                 {item.label}
               </NavLink>
             ))}
           </nav>
-          <Button to="/contact" className="nav-cta">
-            Discuter
+          <Button to={navigationCta.to} className="nav-cta">
+            {navigationCta.label}
           </Button>
           <button className="icon-button nav-menu-button" type="button" aria-label="Ouvrir le menu" onClick={() => setOpen(true)}>
             <Menu aria-hidden="true" size={24} />

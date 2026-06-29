@@ -3,13 +3,12 @@ import Container from "../components/Container.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import { projects } from "../data/projects.js";
-
-const filters = ["Tous", "IA", "Web", "Automation", "En développement"];
+import { siteContent } from "../data/siteContent.js";
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState("Tous");
+  const [activeFilter, setActiveFilter] = useState(siteContent.projectsPage.filters[0]);
   const filteredProjects = useMemo(() => {
-    if (activeFilter === "Tous") return projects;
+    if (activeFilter === siteContent.projectsPage.filters[0]) return projects;
     return projects.filter((project) => project.filters.includes(activeFilter));
   }, [activeFilter]);
 
@@ -17,12 +16,12 @@ export default function Projects() {
     <section className="page page--projects">
       <Container>
         <SectionTitle
-          kicker="Portfolio"
-          title="Mes projets"
-          description="Deux projets principaux qui montrent mon évolution technique, mon intérêt pour l'IA, l'automatisation et le développement d'applications modernes."
+          kicker={siteContent.projectsPage.kicker}
+          title={siteContent.projectsPage.title}
+          description={siteContent.projectsPage.description}
         />
-        <div className="filter-row" role="group" aria-label="Filtrer les projets">
-          {filters.map((filter) => (
+        <div className="filter-row" role="group" aria-label={siteContent.projectsPage.filterAriaLabel}>
+          {siteContent.projectsPage.filters.map((filter) => (
             <button
               className={filter === activeFilter ? "filter-pill is-active" : "filter-pill"}
               key={filter}

@@ -2,13 +2,7 @@ import { X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button.jsx";
-
-const navItems = [
-  { label: "Accueil", to: "/" },
-  { label: "Projets", to: "/projects" },
-  { label: "À propos", to: "/about" },
-  { label: "Contact", to: "/contact" }
-];
+import { navigation } from "../data/navigation.js";
 
 export default function MobileMenu({ open, onClose }) {
   const panelRef = useRef(null);
@@ -39,7 +33,7 @@ export default function MobileMenu({ open, onClose }) {
           <X aria-hidden="true" size={24} />
         </button>
         <nav className="mobile-menu__nav" aria-label="Navigation principale mobile">
-          {navItems.map((item) => (
+          {navigation.map((item) => (
             <NavLink key={item.to} to={item.to} onClick={onClose}>
               {item.label}
             </NavLink>

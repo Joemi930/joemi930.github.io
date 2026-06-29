@@ -3,9 +3,8 @@ import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
 import TechBadge from "../components/TechBadge.jsx";
 import { profile } from "../data/profile.js";
+import { siteContent } from "../data/siteContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
-
-const heroTags = ["IA", "Web", "Mobile", "React", "PHP", "MySQL"];
 
 export default function Hero() {
   const [ref, visible] = useRevealOnScroll();
@@ -14,50 +13,42 @@ export default function Hero() {
     <section className={`hero reveal ${visible}`} ref={ref}>
       <Container className="hero__inner">
         <div className="hero__copy">
-          <p className="kicker">SOFTWARE ENGINEERING STUDENT</p>
-          <h1>Je conçois des applications web, des solutions IA et des expériences numériques modernes.</h1>
-          <p className="hero__lead">
-            Étudiant en Master Génie logiciel, je développe des projets concrets autour du web, de l'intelligence
-            artificielle, de l'automatisation et des systèmes de gestion.
-          </p>
+          <p className="kicker">{siteContent.hero.kicker}</p>
+          <h1>{siteContent.hero.title}</h1>
+          <p className="hero__lead">{siteContent.hero.subtitle}</p>
           <div className="hero__actions">
             <Button to="/projects" icon={ArrowRight}>
-              Voir mes projets
+              {siteContent.hero.primaryAction}
             </Button>
             <Button to="/contact" variant="secondary" icon={Mail} iconPosition="left">
-              Me contacter
+              {siteContent.hero.secondaryAction}
             </Button>
           </div>
-          <div className="hero__facts" aria-label="Informations rapides">
+          <div className="hero__facts" aria-label={siteContent.hero.facts.ariaLabel}>
             <span>
               <MapPin aria-hidden="true" size={18} />
               {profile.location}
             </span>
-            <span>02 projets principaux</span>
+            <span>{siteContent.hero.facts.projects}</span>
             <span>{profile.title}</span>
           </div>
         </div>
-        <div className="hero__visual" aria-label="Présentation visuelle de Joemi">
+        <div className="hero__visual" aria-label={siteContent.hero.visualAriaLabel}>
           <div className="code-card">
             <div className="code-card__dots" aria-hidden="true">
               <span />
               <span />
               <span />
             </div>
-            <pre>{`const developer = {
-  name: "Joemi Tete",
-  role: "Software Engineer",
-  focus: ["IA", "Web", "Mobile"],
-  location: "Kinshasa, RDC"
-};`}</pre>
+            <pre>{siteContent.hero.codePreview}</pre>
           </div>
           <div className="profile-card">
-            <img src={profile.avatar} alt="Portrait de TETE NGITUKA JOEMI" />
+            <img src={profile.avatar} alt={profile.avatarAlt} />
             <div>
               <h2>{profile.displayName}</h2>
               <p>{profile.title}</p>
               <div className="badge-row">
-                {heroTags.map((tag) => (
+                {siteContent.hero.tags.map((tag) => (
                   <TechBadge key={tag}>{tag}</TechBadge>
                 ))}
               </div>

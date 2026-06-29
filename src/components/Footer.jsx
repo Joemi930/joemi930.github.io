@@ -1,13 +1,15 @@
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import Container from "./Container.jsx";
+import { brand } from "../data/navigation.js";
 import { profile } from "../data/profile.js";
+import { siteContent } from "../data/siteContent.js";
 import { socials } from "../data/socials.js";
 
 const links = [
-  { label: "Email", href: `mailto:${socials.email}`, icon: Mail },
-  { label: "GitHub", href: socials.github, icon: Github },
-  { label: "LinkedIn", href: socials.linkedin, icon: Linkedin },
-  { label: "WhatsApp", href: socials.whatsappUrl, icon: MessageCircle }
+  { label: siteContent.contactCta.actions.email, href: `mailto:${socials.email}`, icon: Mail },
+  { label: siteContent.contactCta.actions.github, href: socials.github, icon: Github },
+  { label: siteContent.contactCta.actions.linkedin, href: socials.linkedin, icon: Linkedin },
+  { label: siteContent.contactCta.actions.whatsapp, href: socials.whatsappUrl, icon: MessageCircle }
 ];
 
 export default function Footer() {
@@ -15,7 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <Container className="site-footer__inner">
         <div>
-          <strong>JOEMI.T</strong>
+          <strong>{brand.label}</strong>
           <p>{profile.title} - {profile.location}</p>
         </div>
         <div className="footer-links">

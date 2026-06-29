@@ -29,6 +29,8 @@ Les données publiques sont dans `src/data` :
 - `socials.js`
 - `skills.js`
 - `projects.js`
+- `siteContent.js`
+- `navigation.js`
 - `experience.js`
 
 Les composants lisent ces fichiers au lieu de dupliquer les contenus dans chaque page.
@@ -74,6 +76,7 @@ Le site est statique. Les liens externes utilisent `target="_blank"` avec `rel="
 ## Limites MVP
 
 - Le CV n'est pas disponible.
-- Les dépôts projets sont affichés comme privés.
+- Le dépôt Gold Sniper est public et lié depuis le portfolio.
+- Le dépôt ClipWave existe, mais sa visibilité observée reste non publique.
 - Les captures Gold Sniper et ClipWave ne sont pas inventées.
-- Le déploiement distant dépendra de la disponibilité GitHub Pages sur le dépôt cible.
+- Le déploiement distant passe par GitHub Pages avec GitHub Actions.

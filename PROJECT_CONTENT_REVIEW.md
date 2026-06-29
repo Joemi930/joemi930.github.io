@@ -8,13 +8,12 @@ Date : 2026-06-28
 
 Gold Sniper est un projet Python de moteur décisionnel pour XAUUSD/trading, avec replay, agents, blackboard, dashboard et diagnostics. Le code contient des éléments de mode live/paper, mais le portfolio ne promet pas de rentabilité ni de production ready.
 
-### Technologies détectées
+### Technologies observées
 
 - Python
 - asyncio
 - aiohttp
 - WebSocket
-- MetaTrader 5
 - pandas
 - matplotlib
 - discord.py
@@ -22,10 +21,10 @@ Gold Sniper est un projet Python de moteur décisionnel pour XAUUSD/trading, ave
 - psutil
 - schedule
 
-### Architecture détectée
+### Structure observée
 
-- `main.py` : bootstrap, cold start, connexion MT5, dashboard, Discord command loop.
-- `core/` : moteur, blackboard, bridge MT5, ingestion ticks, candle builder.
+- `main.py` : bootstrap, cold start, connecteur broker, dashboard, Discord command loop.
+- `core/` : moteur, blackboard, connecteur broker, ingestion ticks, candle builder.
 - `agents/` : agents 1 à 7, macro monitor, risk manager.
 - `replay/` : replay engine, decision pipeline, evidence builder, no-lookahead guard.
 - `strategy/` : contrats, ProfessionalDecisionEngine, Kasper scenario, risk allocator.
@@ -42,7 +41,7 @@ Gold Sniper est un projet Python de moteur décisionnel pour XAUUSD/trading, ave
 - Dashboard local avec API et WebSocket.
 - Redaction des secrets dans les payloads dashboard.
 - Outils de diagnostic POI/Micro et readiness/risk gate.
-- Tests ciblés pour dashboard, agents, backtest sans MT5 et modèles de risque.
+- Tests ciblés pour dashboard, agents, backtest hors connexion broker et modèles de risque.
 
 ### Fonctionnalités supposées mais non confirmées
 
@@ -65,7 +64,7 @@ En développement avancé.
 ### Risques de présentation
 
 - Ne pas promettre de performance financière.
-- Ne pas exposer `.env`, compte MT5, tokens Discord ou URL Cloudflare.
+- Ne pas exposer `.env`, compte broker, tokens Discord ou URL Cloudflare.
 - Ne pas présenter les diagnostics comme une validation finale.
 
 ### Texte final proposé pour le portfolio
@@ -78,7 +77,7 @@ Moteur Python de décision et de replay pour XAUUSD, organisé autour d'agents, 
 
 ClipWave est un prototype académique d'application mobile/desktop pour publier des clips vidéos d'artistes. Le dépôt contient une app Flutter minimale, une API NestJS initiale, une architecture documentée et des modules backend placeholder.
 
-### Technologies détectées
+### Technologies observées
 
 - Flutter
 - Dart
@@ -90,7 +89,7 @@ ClipWave est un prototype académique d'application mobile/desktop pour publier 
 - Redis prévu par la documentation
 - Firebase Cloud Messaging prévu par la documentation
 
-### Architecture détectée
+### Structure observée
 
 - `apps/clipwave_app/` : application Flutter.
 - `services/api/` : API NestJS.

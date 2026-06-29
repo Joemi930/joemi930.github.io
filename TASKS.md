@@ -16,12 +16,19 @@
 - Documentation projet.
 - Workflow GitHub Pages.
 - Tests lint et build.
+- Dépôt rendu public pour GitHub Pages.
+- Publication GitHub Pages via GitHub Actions.
+- Corrections éditoriales demandées par Joemi.
+- Centralisation renforcée des textes publics dans `src/data`.
+- Mise à jour du lien GitHub public de Gold Sniper.
+- Vérification de ClipWave : dépôt GitHub existant mais visibilité privée.
+- Note technique `ADMIN_PANEL_PLAN.md` préparée pour une V2 administrable.
 
 ## Restant
 
-- Choisir l'option de déploiement : rendre le dépôt public, utiliser un autre hébergeur, ou passer à un plan GitHub compatible avec Pages privé.
 - Ajouter le CV officiel quand il sera prêt.
-- Ajouter des captures réelles des projets sources si leur exécution locale est validée sans données sensibles.
+- Ajouter des captures réelles lorsque les interfaces des projets seront stabilisées.
+- Étudier le panneau administrateur en V2.
 
 ## Bugs connus
 
