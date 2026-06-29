@@ -2,9 +2,10 @@ import { ArrowUpRight, Code2 } from "lucide-react";
 import Button from "./Button.jsx";
 import StatusBadge from "./StatusBadge.jsx";
 import TechBadge from "./TechBadge.jsx";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function ProjectCard({ project, featured = false }) {
+  const { siteContent } = usePortfolioContent();
   return (
     <article className={featured ? "project-card project-card--featured" : "project-card"}>
       <div className="project-card__visual" aria-hidden="true">

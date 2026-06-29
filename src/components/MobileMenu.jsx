@@ -2,10 +2,11 @@ import { X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button.jsx";
-import { navigation } from "../data/navigation.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function MobileMenu({ open, onClose }) {
   const panelRef = useRef(null);
+  const { navigation, navigationCta } = usePortfolioContent();
 
   useEffect(() => {
     if (!open) return undefined;
@@ -40,7 +41,7 @@ export default function MobileMenu({ open, onClose }) {
           ))}
         </nav>
         <Button to="/contact" onClick={onClose}>
-          Discuter
+          {navigationCta.label}
         </Button>
       </div>
     </div>

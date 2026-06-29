@@ -1,6 +1,6 @@
 import { Navigate, useParams } from "react-router-dom";
 import Container from "../components/Container.jsx";
-import { projects } from "../data/projects.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 import ProjectArchitecture from "../sections/ProjectArchitecture.jsx";
 import ProjectFeatures from "../sections/ProjectFeatures.jsx";
 import ProjectHero from "../sections/ProjectHero.jsx";
@@ -8,6 +8,7 @@ import ProjectScreenshots from "../sections/ProjectScreenshots.jsx";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
+  const { projects } = usePortfolioContent();
   const project = projects.find((item) => item.slug === slug);
 
   if (!project) {

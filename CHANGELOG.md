@@ -5,6 +5,10 @@
 - Corrections éditoriales demandées par Joemi.
 - Remplacement des formulations trop techniques par des textes plus naturels.
 - Centralisation renforcée des textes publics dans `src/data`.
+- Ajout de la lecture Supabase publique avec fallback local `src/data`.
+- Ajout du provider `usePortfolioContent` pour brancher les pages sur la source centralisée.
+- Configuration GitHub Pages pour recevoir les variables publiques Supabase au build.
+- Ajout de `ADMIN_INTEGRATION.md` pour documenter la liaison avec l'admin privé.
 - Mise à jour des libellés Problématique, Solution, Structure technique et Analyse.
 - Remplacement de l'ancien logo court par `JOEMI TETE`.
 - Mise à jour des compétences affichées : ajout de Claude Code et Codex, retrait des anciens éléments non souhaités dans Outils et Méthodes.

@@ -2,9 +2,11 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import Button from "../components/Button.jsx";
 import StatusBadge from "../components/StatusBadge.jsx";
 import TechBadge from "../components/TechBadge.jsx";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function ProjectHero({ project }) {
+  const { siteContent } = usePortfolioContent();
+
   return (
     <section className="project-hero">
       <div className="project-hero__copy">

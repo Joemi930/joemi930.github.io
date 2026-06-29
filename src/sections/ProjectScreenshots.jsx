@@ -1,7 +1,8 @@
 import SectionTitle from "../components/SectionTitle.jsx";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function ProjectScreenshots({ project }) {
+  const { siteContent } = usePortfolioContent();
   const hasScreenshots = project.screenshots.length > 0;
 
   return (

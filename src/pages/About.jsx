@@ -3,11 +3,11 @@ import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
 import TechBadge from "../components/TechBadge.jsx";
-import { profile } from "../data/profile.js";
-import { skillGroups } from "../data/skills.js";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function About() {
+  const { profile, skillGroups, siteContent } = usePortfolioContent();
+
   return (
     <section className="page">
       <Container>

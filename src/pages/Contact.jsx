@@ -2,11 +2,11 @@ import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { profile } from "../data/profile.js";
-import { siteContent } from "../data/siteContent.js";
-import { socials } from "../data/socials.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function Contact() {
+  const { profile, siteContent, socials } = usePortfolioContent();
+
   return (
     <section className="page page--contact">
       <Container>

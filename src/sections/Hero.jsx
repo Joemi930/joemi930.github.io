@@ -2,12 +2,12 @@ import { ArrowRight, Mail, MapPin } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
 import TechBadge from "../components/TechBadge.jsx";
-import { profile } from "../data/profile.js";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
 
 export default function Hero() {
   const [ref, visible] = useRevealOnScroll();
+  const { profile, siteContent } = usePortfolioContent();
 
   return (
     <section className={`hero reveal ${visible}`} ref={ref}>

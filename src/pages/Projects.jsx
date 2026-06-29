@@ -2,15 +2,15 @@ import { useMemo, useState } from "react";
 import Container from "../components/Container.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { projects } from "../data/projects.js";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function Projects() {
+  const { projects, siteContent } = usePortfolioContent();
   const [activeFilter, setActiveFilter] = useState(siteContent.projectsPage.filters[0]);
   const filteredProjects = useMemo(() => {
     if (activeFilter === siteContent.projectsPage.filters[0]) return projects;
     return projects.filter((project) => project.filters.includes(activeFilter));
-  }, [activeFilter]);
+  }, [activeFilter, projects, siteContent.projectsPage.filters]);
 
   return (
     <section className="page page--projects">

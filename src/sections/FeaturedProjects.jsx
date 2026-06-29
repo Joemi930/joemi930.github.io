@@ -1,12 +1,12 @@
 import Container from "../components/Container.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { projects } from "../data/projects.js";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
 
 export default function FeaturedProjects() {
   const [ref, visible] = useRevealOnScroll();
+  const { projects, siteContent } = usePortfolioContent();
 
   return (
     <section className={`section reveal ${visible}`} ref={ref}>

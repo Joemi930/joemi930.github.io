@@ -32,6 +32,11 @@ Date : 2026-06-29
 ### Corrections éditoriales 2026-06-29
 
 - Centralisation renforcée des textes publics dans `src/data/navigation.js`, `src/data/siteContent.js`, `src/data/profile.js`, `src/data/projects.js` et `src/data/skills.js`.
+- Ajout de `src/services/contentService.js` pour lire Supabase REST en lecture seule.
+- Ajout de `src/hooks/usePortfolioContent.js` pour fournir Supabase ou fallback local à toutes les pages publiques.
+- Migration des pages Accueil, Projets, Détail projet, À propos, Contact et 404 vers le provider centralisé.
+- Configuration `.github/workflows/deploy.yml` avec les variables publiques `VITE_SUPABASE_URL` et `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- Variables GitHub Actions configurées pour `Joemi930/joemi930.github.io`.
 - Remplacement des formulations trop techniques par des textes plus naturels et plus fidèles au positionnement de Joemi.
 - Remplacement de l'ancien logo court par `JOEMI TETE`.
 - Mise à jour des libellés publics : `Problématique`, `Structure technique`, `Ce que le projet apporte`, `Dépôt non public`.
@@ -41,8 +46,10 @@ Date : 2026-06-29
 - ClipWave : remote GitHub vérifiée, `https://github.com/Joemi930/clipwave`, mais dépôt GitHub observé comme privé ; le portfolio ne le présente donc pas comme public.
 - Note technique `ADMIN_PANEL_PLAN.md` ajoutée pour la V2 du panneau administrateur.
 - `npm run lint` : réussite après corrections éditoriales.
-- `npm run build` : réussite après corrections éditoriales.
-- `npm run test:e2e` : 8 tests réussis après corrections éditoriales.
+- `npm run build` : réussite après corrections éditoriales et intégration Supabase.
+- `npm run test:e2e` : 8 tests réussis après corrections éditoriales et intégration Supabase.
+- Supabase REST public : lecture `profile`, `projects`, `site_content`, `skills` réussie avec publishable key.
+- Supabase RLS : écriture anonyme vers `projects` refusée.
 - `npm run preview -- --port 4183` : preview local lancé et vérifié.
 - Vérification locale e2e manuelle : Accueil, Projets, Gold Sniper, ClipWave, À propos, Contact, menu mobile, liens sociaux, responsive desktop et mobile, console sans erreur.
 

@@ -1,11 +1,11 @@
 import Container from "../components/Container.jsx";
 import SectionTitle from "../components/SectionTitle.jsx";
-import { experience } from "../data/experience.js";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll.js";
 
 export default function Experience() {
   const [ref, visible] = useRevealOnScroll();
+  const { experience, siteContent } = usePortfolioContent();
 
   return (
     <section className={`section reveal ${visible}`} ref={ref}>

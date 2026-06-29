@@ -3,10 +3,11 @@ import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button.jsx";
 import MobileMenu from "./MobileMenu.jsx";
-import { brand, navigation, navigationCta } from "../data/navigation.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { brand, navigation, navigationCta } = usePortfolioContent();
   const closeMenu = useCallback(() => setOpen(false), []);
 
   return (

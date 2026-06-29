@@ -1,7 +1,9 @@
 import SectionTitle from "../components/SectionTitle.jsx";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function ProjectArchitecture({ project }) {
+  const { siteContent } = usePortfolioContent();
+
   return (
     <section className="project-section">
       <SectionTitle kicker={siteContent.projectDetail.architecture.kicker} title={siteContent.projectDetail.architecture.title} />

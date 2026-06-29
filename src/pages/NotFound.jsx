@@ -1,9 +1,11 @@
 import { ArrowLeft } from "lucide-react";
 import Button from "../components/Button.jsx";
 import Container from "../components/Container.jsx";
-import { siteContent } from "../data/siteContent.js";
+import { usePortfolioContent } from "../hooks/usePortfolioContent.js";
 
 export default function NotFound() {
+  const { siteContent } = usePortfolioContent();
+
   return (
     <section className="page page--center">
       <Container>
