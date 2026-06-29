@@ -85,7 +85,10 @@ Réussi sur `http://127.0.0.1:4183/` après corrections éditoriales.
 - Statut du workflow : success.
 - Publication locale vérifiée le : `2026-06-29 00:38:20 +01:00`.
 - Dernier commit initial publié avant corrections éditoriales : `139e6f70ef8ad18f6d07c0efecf8e47ca8c9d7cd`.
-- Le commit final des corrections éditoriales et le nouveau run GitHub Actions sont confirmés dans le retour de mission après push et déploiement.
+- Commit intégration Supabase publié : `938f89a43c9a24e20c82e0f0390716007656ea05`.
+- Run GitHub Pages intégration Supabase : `28352463582`.
+- Statut du workflow intégration Supabase : success.
+- Publication vérifiée le : `2026-06-29 07:16:00 +01:00`.
 
 ## Résultat production
 
@@ -101,6 +104,9 @@ Testé sur `https://joemi930.github.io/` :
 - Responsive desktop : OK.
 - Responsive mobile `390x844` : OK.
 - Console navigateur : aucune erreur.
+- Lecture Supabase/fallback en production : OK.
+- Lien code Gold Sniper : `https://github.com/Joemi930/gold-sniper`.
+- ClipWave affiché comme dépôt non public, cohérent avec la visibilité GitHub privée observée.
 
 ## Résultat responsive
 

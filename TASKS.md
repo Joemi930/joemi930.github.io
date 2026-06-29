@@ -23,6 +23,7 @@
 - Lecture Supabase publique ajoutée avec fallback local.
 - GitHub Actions configuré avec variables publiques Supabase.
 - Documentation `ADMIN_INTEGRATION.md` ajoutée.
+- Production GitHub Pages vérifiée après intégration Supabase.
 - Mise à jour du lien GitHub public de Gold Sniper.
 - Vérification de ClipWave : dépôt GitHub existant mais visibilité privée.
 - Note technique `ADMIN_PANEL_PLAN.md` préparée pour une V2 administrable.
@@ -31,8 +32,8 @@
 
 - Ajouter le CV officiel quand il sera prêt.
 - Ajouter des captures réelles lorsque les interfaces des projets seront stabilisées.
-- Étudier le panneau administrateur en V2.
 - Déployer l'admin privé Vercel et vérifier le magic link Joemi en production.
+- Exécuter ZAP baseline non destructif sur preview admin après déploiement Vercel.
 
 ## Bugs connus
 
